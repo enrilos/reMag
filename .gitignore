@@ -21,3 +21,13 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+# WP
+local
+
+code/wp-config.php
+code/wp-content/uploads/*
+code/wp-content/upgrade/*
+
+!code/wp-content/uploads/images
+code/wp-content/uploads/images/*
