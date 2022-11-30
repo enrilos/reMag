@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    ports:
+      - 9090:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: remag
+      MYSQL_USER: emre
+      MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: test
+  wp:
+    image: wordpress:php8.1-apache
+    restart: always
+    ports:
+      - 5050:80
+    depends_on:
+      - db
+    volumes:
+      - ./code:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: emre
+      WORDPRESS_DB_PASSWORD: test
+      WORDPRESS_DB_NAME: remag
+volumes:
+  mysql_data:
+  code:
