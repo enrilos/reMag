@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/', function (Request $request) {
-    return response()->json(['message' => 'You are using the /api route group']);
+Route::controller(ProductController::class)->prefix('products')->group(function () {
+    Route::get('/', 'all');
+    Route::get('/{column}/{value}', 'getBy')->where(['column' => '[A-Za-z]+']);
+    Route::get('/{id}', 'get')->where('id', '[0-9]+');
 });
