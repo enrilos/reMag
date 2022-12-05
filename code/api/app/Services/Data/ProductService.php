@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Services\Data;
 
-use App\Contracts\Repositories\IProductRepository;
+use App\Contracts\Services\Data\IProductService;
 
-class ProductRepository implements IProductRepository
+class ProductService implements IProductService
 {
     private static $products = array(
         [
@@ -24,6 +24,7 @@ class ProductRepository implements IProductRepository
             'name' => 'New York Pizza'
         ]
     );
+
 
     public function all()
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Contracts\Repositories;
+namespace App\Contracts\Services\Data;
 
-interface IProductRepository
+interface IProductService
 {
     public function all();
     public function get($id);

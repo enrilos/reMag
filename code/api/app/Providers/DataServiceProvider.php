@@ -4,10 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-use App\Contracts\Repositories\IProductRepository;
-use App\Repositories\ProductRepository;
+use App\Contracts\Services\Data\IProductService;
+use App\Services\Data\ProductService;
 
-class RepositoryServiceProvider extends ServiceProvider
+class DataServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -16,7 +16,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(IProductRepository::class, ProductRepository::class);
+        $this->app->bind(IProductService::class, ProductService::class);
     }
 
     /**

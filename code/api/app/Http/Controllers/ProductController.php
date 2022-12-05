@@ -4,29 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Contracts\Repositories\IProductRepository;
+use App\Contracts\Services\Data\IProductService;
 
 class ProductController extends Controller
 {
-    private IProductRepository $productRepository;
+    private IProductService $productService;
 
-    public function __construct(IProductRepository $productRepository)
+    public function __construct(IProductService $productService)
     {
-        $this->productRepository = $productRepository;
+        $this->productService = $productService;
     }
 
     public function all(Request $request)
     {
-        return $this->productRepository->all();
+        return $this->productService->all();
     }
 
     public function get(Request $request, int $id)
     {
-        return response()->json(['product' => $this->productRepository->get($id)]);
+        return response()->json($this->productService->get($id), 200);
     }
 
     public function getBy(Request $request, string $column, string $value)
     {
-        return response()->json(['products' => $this->productRepository->by($column, $value)]);
+        return response()->json($this->productService->by($column, $value), 200);
     }
 }
