@@ -22,6 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(ProductController::class)->prefix('products')->group(function () {
     Route::get('/', 'all');
+    Route::get('/all', 'all');
+    Route::get('/posts', 'posts');
     Route::get('/{column}/{value}', 'getBy')->where(['column' => '[A-Za-z]+']);
     Route::get('/{id}', 'get')->where('id', '[0-9]+');
 });
