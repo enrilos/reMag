@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: test
       MYSQL_ROOT_PASSWORD: test
   wp:
-    image: wordpress:php8.1-apache
+    build: .
     restart: always
     ports:
       - 5050:80
