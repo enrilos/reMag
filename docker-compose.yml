@@ -20,7 +20,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./code:/var/www/html
+      - ./code/wp:/var/www/html
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: emre
@@ -28,4 +28,3 @@ services:
       WORDPRESS_DB_NAME: remag
 volumes:
   mysql_data:
-  code:
