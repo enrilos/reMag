@@ -11,14 +11,12 @@ namespace Remag;
 //=================================================
 // Security: Abort if this file is called directly
 //=================================================
-
 if (!defined('ABSPATH')) {
     die;
 }
 
+define('PLUGINPATH', plugin_dir_path(__FILE__));
 
-use Remag\Hooks\PostHooks;
+require PLUGINPATH . '/engine.php';
 
-require_once __DIR__ . '/hooks/PostHooks.php';
-
-PostHooks::register();
+add_action('plugins_loaded', '\Remag\Engine::init');
