@@ -27,7 +27,7 @@ export default function Header() {
     }, [location.pathname]);
 
     const clickHandler = (e: any) => {
-        e.preventDefault();
+        e.domEvent.preventDefault();
         setCurrent(e.key ?? '');
     };
 
