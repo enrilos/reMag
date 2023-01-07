@@ -20,7 +20,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./code/wp:/var/www/html
+      - ./code:/var/www/html
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: emre

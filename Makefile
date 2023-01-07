@@ -1,5 +1,5 @@
 dev:
-	cd code/client/ && npm run dev
+	cd code/wp-content/themes/remag && npm run dev
 serve:
 	cd code/api && php artisan serve
 composer:
