@@ -17,6 +17,6 @@ if (!defined('ABSPATH')) {
 
 define('PLUGINPATH', plugin_dir_path(__FILE__));
 
-require PLUGINPATH . './engine.php';
+require PLUGINPATH . '/engine.php';
 
 add_action('plugins_loaded', '\Remag\Engine::init');

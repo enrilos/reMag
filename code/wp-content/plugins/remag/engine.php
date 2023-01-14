@@ -4,7 +4,7 @@ namespace Remag;
 
 defined('ABSPATH') || exit;
 
-require_once PLUGINPATH . './actions.php';
+require_once PLUGINPATH . '/actions.php';
 
 class Engine
 {
