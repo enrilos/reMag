@@ -4,9 +4,9 @@ namespace Remag;
 
 defined('ABSPATH') || exit;
 
-require_once PLUGINPATH . '/hooks/post-hooks.php';
+require_once PLUGINPATH . '/includes/hooks/post-hooks.php';
 
-class Actions
+class Hooks
 {
     public static function register()
     {
