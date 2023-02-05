@@ -17,4 +17,4 @@ define('PLUGINPATH', plugin_dir_path(__FILE__));
 
 require_once PLUGINPATH . 'includes/Engine.php';
 
-add_action('plugins_loaded', '\Remag\Engine::init');
+add_action('plugins_loaded', [Remag\Engine::class, 'init']);

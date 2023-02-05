@@ -9,9 +9,15 @@ require_once PLUGINPATH . 'includes/Routes.php';
 
 class Hooks
 {
+    /**
+     * register
+     *
+     * @return void
+    */
     public static function register()
     {
-        Routes::register();
         Hooks\PostHooks::register();
+
+        add_action('rest_api_init', [Routes::class, 'register']);
     }
 }
