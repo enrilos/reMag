@@ -4,16 +4,11 @@ namespace Remag;
 
 defined('ABSPATH') || exit;
 
-require_once PLUGINPATH . 'includes/hooks/PostHooks.php';
-require_once PLUGINPATH . 'includes/Routes.php';
+require_once REMAGPATH . 'includes/hooks/PostHooks.php';
+require_once REMAGPATH . 'includes/Routes.php';
 
 class Hooks
 {
-    /**
-     * register
-     *
-     * @return void
-    */
     public static function register()
     {
         Hooks\PostHooks::register();

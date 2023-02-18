@@ -2,6 +2,8 @@
 
 namespace Remag\Hooks;
 
+defined('ABSPATH') || exit;
+
 class PostHooks
 {
     public static function register()

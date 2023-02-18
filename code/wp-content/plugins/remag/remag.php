@@ -13,8 +13,8 @@ if (!defined('ABSPATH')) {
     die;
 }
 
-define('PLUGINPATH', plugin_dir_path(__FILE__));
+define('REMAGPATH', plugin_dir_path(__FILE__));
 
-require_once PLUGINPATH . 'includes/Engine.php';
+require_once REMAGPATH . 'includes/Engine.php';
 
 add_action('plugins_loaded', [Remag\Engine::class, 'init']);
